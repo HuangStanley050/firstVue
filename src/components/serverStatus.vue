@@ -1,18 +1,23 @@
 <template>
   <div>
-    <p>Server Status: {{ status }}</p>
+    <p>Server {{ id }} Status: {{ status }}</p>
     <hr />
     <button @click="changeStatus">Change Status</button>
   </div>
 </template>
 
 <script>
+import { eventBus } from "../main";
 export default {
   name: "ServerStatus",
-  data: function() {
-    return {
-      status: "Critical"
-    };
+  props: {
+    id: {
+      type: Number
+    },
+    status: { type: String }
+  },
+  created() {
+    eventBus.$on("selectedServer", status => (this.status = status));
   },
   methods: {
     changeStatus() {

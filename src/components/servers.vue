@@ -3,7 +3,10 @@
     <div class="col-xs-12 col-sm-6">
       <ul class="list-group">
         <li
-          v-bind:key="server.id"
+          :key="server.id"
+          :id="server.id"
+          :status="server.status"
+          @click="sendDetail()"
           class="list-group-item"
           v-for="server in servers"
         >
@@ -18,8 +21,17 @@
 </template>
 
 <script>
+import { eventBus } from "../main";
 export default {
   name: "servers",
+  methods: {
+    sendDetail() {
+      //console.log("sending");
+      console.log(this.status, this.id);
+      eventBus.$emit("selectedServer", "test");
+    }
+  },
+
   data: function() {
     return {
       servers: [
