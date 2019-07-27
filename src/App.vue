@@ -2,26 +2,27 @@
   <div class="container" id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <Header/>
-    <hr>
-    <ServerStatus/>
-    <Footer/>
+    <Header />
+    <hr />
+    <ServerContainer />
+    <Footer />
   </div>
 </template>
 
 <script>
-
 //import HelloWorld from './components/HelloWorld.vue'
 //import Home from "./components/Home.vue";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
-import ServerStatus from "./components/ServerStatus.vue";
+// import Servers from "./components/servers.vue";
+// import ServerStatus from "./components/serverStatus.vue";
+import ServerContainer from "./components/serverContainer.vue";
 export default {
   name: "app",
   components: {
     Footer,
     Header,
-    ServerStatus
+    ServerContainer
   }
 };
 </script>

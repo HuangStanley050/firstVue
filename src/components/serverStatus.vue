@@ -1,14 +1,14 @@
 <template>
   <div>
-    <p>Server Status: {{status}}</p>
-    <hr>
+    <p>Server Status: {{ status }}</p>
+    <hr />
     <button @click="changeStatus">Change Status</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "ServerStatus",
   data: function() {
     return {
       status: "Critical"
@@ -22,5 +22,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
